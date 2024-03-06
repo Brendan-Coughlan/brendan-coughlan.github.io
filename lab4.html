@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Brendan Coughlan Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        now = new Date()
+        hour = now.getHours()
+        window.alert("Welcome to the store!")
+        var customerName
+        var itemRequested
+        var numOfItems
+        customerName = window.prompt("What is your name?")
+        itemRequested = window.prompt("What item do you wish to buy?")
+        numOfItems = window.prompt("How many of this item would you like?")
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Brendan Coughlan Portfolio</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Labs<span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lab3.html">Lab 3</a></li>
+                        <li class="active"><a href="lab4.html">Lab 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        if(hour < 12) {
+            document.writeln("<h1>Good morning, " + customerName + ", thank you for ordering!</h1>")
+        }
+        else if(hour < 18) {
+            document.writeln("<h1>Good afternoon, " + customerName + ", thank you for ordering!</h1>")
+            }
+        else {
+            document.writeln("<h1>Good evening, " + customerName + ", thank you for ordering!</h1>")
+            }
+        document.writeln("<h3>Name: " + customerName)
+        document.writeln("<br>Item: " + itemRequested)
+        document.writeln("<br>Amount: " + numOfItems + "</h>")
+        document.writeln("<h3>Your order will arrive on " + new Date(now.getFullYear(), now.getMonth(), now.getDay()+7).toDateString() + "</h3>")
+    </script>
+</body>
