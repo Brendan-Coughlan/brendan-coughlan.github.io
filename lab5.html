@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lab 3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let user = { firstName: "", lastName: "", email: "", password: "", birthDate: "" }
+
+        function readForm() {
+            if (!validateFields()) {
+                return
+            }
+            user.firstName = document.forms["form"]["firstName"].value
+            user.lastName = document.forms["form"]["lastName"].value
+            user.email = document.forms["form"]["email"].value
+            user.password = document.forms["form"]["password"].value
+            user.birthDate = document.forms["form"]["birthDate"].value
+
+            document.getElementById("userInformationLabel").innerHTML = "User Information"
+            document.getElementById("firstName").innerHTML = "First name: " + user.firstName
+            document.getElementById("lastName").innerHTML = "Last name: " + user.lastName
+            document.getElementById("email").innerHTML = "Email address: " + user.email
+            document.getElementById("birthDate").innerHTML = "Date of birth: " + user.birthDate
+            document.getElementById("password").innerHTML = "Password: "
+            for (let i = 0; i < user.password.length; i++) {
+                document.getElementById("password").innerHTML += "*"
+            }
+        }
+
+        function validateFields() {
+            for(let i = 0; i < document.forms["form"].length; i++) {
+                if(document.forms["form"][i].value == "") {
+                    window.alert("All fields must be filled out")
+                    return false
+                }
+            }
+
+            let password = document.forms["form"]["password"].value
+            if (!password.includes("!") && !password.includes("?")) {
+                window.alert("Password must contain a special chaaracter")
+                return false
+            }
+            return true
+        }
+    </script>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Brendan Coughlan Portfolio</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Labs<span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="lab3.html">Lab 3</a></li>
+                        <li><a href="lab4.html">Lab 4</a></li>
+                        <li class="active"><a href="lab5.html">Lab 5</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div align="center" class="row">
+            <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/d738f398-2b0c-42f5-841f-b5a47f87ef21.__CR0,0,970,600_PT0_SX970_V1___.jpg" class="img-thumbnail" width="20%" height="20%" alt="Scrub Daddy">
+            <h4><b>$99.99</b></h4>
+            <p style="font-size: xx-small;">(No refunds)</p>
+    </div>
+    <div class="row">
+        <div align="center" class="col-md-6">
+            <h4><b>Please register before purchasing</b></h4>
+            <form name="form">
+                <label>First name:</label>
+                <input name="firstName" type="text"><br>
+                <label>Last name:</label>
+                <input name="lastName" type="text"><br>
+                <label>Email address:</label>
+                <input name="email" type="text"><br>
+                <label>Password:</label>
+                <input name="password" type="text"><br>
+                <label>Date of birth:</label>
+                <input name="birthDate" type="text"><br>
+            </form>
+            <button onclick="readForm()">Submit</button>
+        </div>
+        <div class="col-md-6">
+            <h2 id="userInformationLabel" align="center"></h2>
+            <h3 id="firstName" align="center"></h3>
+            <h3 id="lastName" align="center"></h3>
+            <h3 id="email" align="center"></h3>
+            <h3 id="password" align="center"></h3>
+            <h3 id="birthDate" align="center"></h3>
+        </div>
+    </div>
+</body>
+
+</html>
