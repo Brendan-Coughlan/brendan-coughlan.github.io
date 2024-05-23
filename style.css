@@ -1,0 +1,39 @@
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.topnav img {
+    float: left;
+    width: 75px;
+}
+
+.topnav h1 {
+    float: left;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 28px;
+    color: black;
+}
+
+.topnav a {
+    float: right;
+    text-decoration: none;
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.topnav a:hover{
+    background-color: lightgrey;
+}
+
+.selected {
+    background-color: lightgrey;
+}
