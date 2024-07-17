@@ -1,0 +1,29 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: monospace;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+}
+
+.topnav a {
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 25px;
+  border-radius: 50px;
+  margin-top: 20px;
+  float: right;
+  color: black;
+}
+
+.topnav a:hover {
+  background-color: gainsboro;
+}
+
+.selected {
+  background-color: gainsboro;
+}
